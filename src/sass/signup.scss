@@ -1,0 +1,266 @@
+@import "./base";
+
+body {
+	width: 100%;
+	height: 100vh;
+	background: lighten(black, 20);
+	color: white;
+	font-size: 1rem;
+	font-family: Arial, Helvetica, sans-serif;
+	display: grid;
+	place-items: center;
+
+	main {
+		width: 50%;
+		height: 90%;
+		overflow: hidden;
+		background: black;
+		border-radius: 1.5rem;
+
+		.head {
+			display: flex;
+			padding: 1.5rem;
+
+			svg {
+				flex-grow: 1;
+			}
+
+			.btn-link {
+				width: 6.5rem;
+				outline: none;
+				background: $primary-color;
+				color: white;
+				border-radius: 999rem;
+				border: none;
+				padding: 0.45rem;
+				transition: 0.25s;
+				cursor: pointer;
+
+				&#back {
+					visibility: hidden;
+				}
+			}
+		}
+
+		.body {
+			width: 100%;
+			height: 87.5%;
+			padding: 2rem 3.5rem;
+			display: flex;
+			gap: 7rem;
+			transition: 0.25s;
+			transform: translateX(0);
+
+			.page {
+				min-width: 100%;
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				gap: 2rem;
+
+				h2 {
+					font-size: 2em;
+				}
+
+				h3 {
+					font-size: 1.25em;
+				}
+
+				p {
+					font-size: 1em;
+					letter-spacing: 0.05rem;
+					color: gray;
+					text-align: justify;
+				}
+
+				.form-group {
+					width: 100%;
+					height: 4.25rem;
+					border: thin solid rgba(white, 0.25);
+					border-radius: 0.5rem;
+					position: relative;
+
+					input,
+					label {
+						position: absolute;
+						width: 100%;
+						height: 100%;
+						background: transparent;
+					}
+
+					input {
+						border: none;
+						border-radius: 0.5rem;
+						outline: none;
+						color: rgba(white, 0.75);
+						padding-top: 1.5rem;
+						padding-left: 0.5rem;
+						font-size: 1.5em;
+
+						&:focus,
+						&:valid {
+							border: 0.25rem solid $primary-color;
+
+							& + label {
+								align-items: flex-start;
+
+								span {
+									font-size: 0.875em;
+
+									&:nth-child(1) {
+										color: $primary-color;
+									}
+
+									&:nth-child(2) {
+										display: inline;
+									}
+								}
+							}
+						}
+					}
+
+					label {
+						pointer-events: none;
+						display: flex;
+						align-items: center;
+						justify-content: space-between;
+						padding: 0.5rem;
+						color: rgba(white, 0.5);
+						transition: 0.25s;
+
+						span {
+							transition: 0.25s;
+
+							&:nth-child(1) {
+								font-size: 1.25em;
+							}
+
+							&:nth-child(2) {
+								display: none;
+							}
+						}
+					}
+
+					&#useEmail {
+						display: none;
+					}
+				}
+
+				.btn-link {
+					align-self: flex-start;
+					padding: none;
+					background: none;
+					outline: none;
+					border: none;
+					color: $primary-color;
+					font-size: 1em;
+				}
+
+				.date-form {
+					display: flex;
+					flex-direction: column;
+					gap: 1.5rem;
+
+					.date-group {
+						display: grid;
+						grid-template-columns: 8fr 3fr 4fr;
+						gap: 1.5rem;
+						position: relative;
+
+						.form-group {
+							select {
+								position: absolute;
+								width: 100%;
+								height: 100%;
+								opacity: 1;
+								padding-top: 1rem;
+								padding-left: 0.5rem;
+								border: none;
+								background: transparent;
+								color: rgba(white, 0.75);
+								font-size: 1.25rem;
+								appearance: none;
+								-webkit-appearance: none;
+								-moz-appearance: none;
+
+								option {
+									opacity: 1;
+									background: initial;
+									color: initial;
+								}
+							}
+
+							label {
+								span {
+									align-self: flex-start;
+									font-size: 00.875em;
+								}
+							}
+						}
+					}
+				}
+
+				&.page-two {
+					gap: 3rem;
+
+					h3 {
+						font-size: 1.5em;
+						padding-bottom: 1rem;
+					}
+
+					p {
+						display: flex;
+
+						span {
+							flex-grow: 1;
+							padding-right: 1rem;
+							color: rgba(white, 0.875);
+						}
+
+						a {
+							padding-left: 0.5rem;
+							text-decoration: none;
+							color: darken($primary-color, 10);
+						}
+					}
+				}
+
+				&.page-three {
+					.form-group {
+						label span {
+							align-self: flex-start;
+							font-size: 0.875em;
+						}
+					}
+
+					.signup-content {
+						padding-top: 3rem;
+
+						p {
+							font-size: 1.15em;
+							line-height: 1.4;
+							color: rgba(white, 0.875);
+
+							a {
+								color: darken($primary-color, 10);
+								text-decoration: none;
+							}
+						}
+
+						button {
+							margin-top: 1.5rem;
+							width: 100%;
+							padding: 1rem;
+							border-radius: 999rem;
+							border: none;
+							outline: none;
+							color: white;
+							background: $primary-color;
+							cursor: pointer;
+						}
+					}
+				}
+			}
+		}
+	}
+}

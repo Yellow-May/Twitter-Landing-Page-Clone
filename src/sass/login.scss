@@ -1,0 +1,100 @@
+@import "./base";
+
+body {
+	background: black;
+	color: white;
+	font-size: 1rem;
+	font-family: Arial, Helvetica, sans-serif;
+
+	main {
+		width: 30%;
+		margin: auto;
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		padding: 2rem;
+
+		h2 {
+			font-size: 2.5em;
+			letter-spacing: 0.125rem;
+		}
+
+		form {
+			.form-group {
+				width: 100%;
+				height: 3.5rem;
+				border: 0.1rem solid rgba(white, 0.5);
+				border-radius: 0.25rem;
+				margin-bottom: 1.75rem;
+				position: relative;
+
+				input,
+				span {
+					position: absolute;
+					transition: 0.25s;
+				}
+
+				input {
+					width: 100%;
+					height: 100%;
+					background: transparent;
+					outline: none;
+					border: none;
+					color: white;
+					padding-left: 1rem;
+					font-size: 1.125em;
+
+					&:focus + span,
+					&:valid + span {
+						top: -0.75rem;
+						left: 0;
+						font-size: 1em;
+					}
+				}
+
+				span {
+					color: rgba(white, 0.5);
+					font-size: 1.25em;
+					top: 50%;
+					left: 0.5rem;
+					transform: translateY(-50%);
+					pointer-events: none;
+				}
+			}
+
+			button {
+				width: 100%;
+				padding: 1rem;
+				border-radius: 999rem;
+				background: $primary-color;
+				color: white;
+				outline: none;
+				border: none;
+				cursor: pointer;
+				transition: 0.25s;
+
+				&:hover {
+					background: lighten($primary-color, 20);
+					color: darken(white, 80);
+				}
+			}
+		}
+
+		p {
+			text-align: center;
+
+			a {
+				padding: 0.5rem;
+				text-decoration: none;
+				color: darken($primary-color, 20);
+				letter-spacing: 0.05rem;
+				font-size: 1em;
+				transition: 0.25s;
+
+				&:hover {
+					color: white;
+				}
+			}
+		}
+	}
+}
